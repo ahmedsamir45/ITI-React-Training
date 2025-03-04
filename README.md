@@ -49,5 +49,5 @@ Throughout the training, I have worked on various hands-on projects, including:
 - Navigate to different project folders to explore my work
 - Open `index.html` files to preview projects in a browser
 
-final project: [demo](https://github.com/ahmedsamir45/UR_Store)
+final project: [repo](https://github.com/ahmedsamir45/UR_Store)
 
