@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Range</title>
+    <style>
+        #colorText {
+            font-size: 24px;
+            font-weight: bold;
+            color: rgb(0, 0, 0); 
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label for="redRange">Red</label>
+        <input type="range" id="redRange" min="0" max="255" value="0">
+    </div>
+    <div>
+        <label for="greenRange">Green</label>
+        <input type="range" id="greenRange" min="0" max="255" value="0">
+    </div>
+    <div>
+        <label for="blueRange">Blue</label>
+        <input type="range" id="blueRange" min="0" max="255" value="0">
+    </div>
+
+    <p id="colorText">Change the 3 Color Ranges above and observe my color Change</p>
+
+    <script>
+    
+        const redRange = document.getElementById('redRange');
+        const greenRange = document.getElementById('greenRange');
+        const blueRange = document.getElementById('blueRange');
+        const colorText = document.getElementById('colorText');
+
+
+        function updateColor() {
+            const red = redRange.value;
+            const green = greenRange.value;
+            const blue = blueRange.value;
+
+            colorText.style.color = `rgb(${red}, ${green}, ${blue})`;
+        }
+
+        redRange.addEventListener('input', updateColor);
+        greenRange.addEventListener('input', updateColor);
+        blueRange.addEventListener('input', updateColor);
+    </script>
+</body>
+</html>

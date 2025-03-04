@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        body{
+            background-color: azure;
+        }
+        input[type="password"],[type="text"]{
+            display: block;
+            width: 100%;
+        }
+  
+        label{
+    
+            color: brown;
+        }
+        legend{
+            color: red;
+        }
+        fieldset{
+            width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px rgb(64, 64, 249) solid;
+        }
+        fieldset div{
+            margin-bottom: 10px;
+        }
+        input[type="submit"]{
+            padding: 10px;
+            display: block;
+            margin:  auto;
+        }
+    </style>
+</head>
+<body>
+    <form action="next1.html">
+        <fieldset>
+            <legend>Login</legend>
+            <div>
+                <label for="name">User naame</label>
+                <input type="text" placeholder="enter user name">
+            </div>
+            <div>
+                <label for="user password">Uer Password</label>
+                <input type="password" placeholder="enter user name">
+            </div>
+            <div>
+                <input type="checkbox" name="rem" id="rem"><label for="rem">remember me</label>
+            </div>
+            <div>
+                <input type="submit" value="Sign In">
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>

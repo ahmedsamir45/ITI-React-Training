@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Marbles</title>
+    <style>
+        .marble-container {
+            display: flex;
+            justify-content: space-between;
+            width: 500px;
+            margin: 50px auto;
+        }
+
+        .marble {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: grey;
+            transition: background-color 0.3s;
+        }
+
+        .active {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="marble-container">
+        <div class="marble"></div>
+        <div class="marble"></div>
+        <div class="marble"></div>
+        <div class="marble"></div>
+        <div class="marble"></div>
+    </div>
+
+    <script>
+        let marbles = document.querySelectorAll('.marble');
+        let currentMarble = 0;
+        let interval;
+
+        function startAnimation() {
+            interval = setInterval(() => {
+                marbles[currentMarble].classList.remove('active');
+                currentMarble = (currentMarble + 1 >= marbles.length) ? 0 : currentMarble + 1;
+                marbles[currentMarble].classList.add('active');
+            }, 1000);
+        }
+
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].onmouseover = function() {
+                clearInterval(interval);
+            };
+            marbles[i].onmouseout = startAnimation;
+        }
+
+        startAnimation();
+    </script>
+</body>
+</html>

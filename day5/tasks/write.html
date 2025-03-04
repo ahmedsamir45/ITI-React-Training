@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typewriter Effect</title>
+</head>
+<body>
+    <p id="type"></p>
+    <script>
+        var myText = "hello from this is typewriter effect",
+            i = 0;
+
+        function typing() {
+            var typeWriter = setInterval(function() {
+                document.getElementById("type").textContent += myText[i];
+                i++;
+                if (i >= myText.length) {
+                    clearInterval(typeWriter);
+                }
+            }, 100);
+        }
+
+        typing();
+    </script>
+</body>
+</html>

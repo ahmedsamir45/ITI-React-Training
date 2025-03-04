@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Triangle with Pythagorean Theorem</title>
+    <style>
+        svg {
+            border: 1px solid black;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <svg id="triangle-svg" width="500" height="500"></svg>
+    <script>
+        // Function to draw a right-angled triangle
+        function drawTriangle() {
+            const svg = document.getElementById('triangle-svg');
+            
+            // Lengths of the sides
+            const a = 100; // base
+            const b = 200; // height
+            const c = Math.sqrt(a * a + b * b); 
+            
+        
+            const x1 = 50; 
+            const y1 = 50; 
+            const x2 = x1 + a; 
+            const y2 = y1;
+            const x3 = x1; 
+            const y3 = y1 + b; 
+            
+            // Create the triangle path
+            const trianglePath = `
+                M ${x1} ${y1} 
+                L ${x2} ${y2} 
+                L ${x3} ${y3} 
+                Z
+            `;
+            
+            // Create the SVG path element
+            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            path.setAttribute('d', trianglePath);
+            path.setAttribute('fill', 'red');
+            path.setAttribute('stroke', 'black');
+            path.setAttribute('stroke-width', '2');
+            
+            svg.appendChild(path);
+        }
+        drawTriangle();
+    </script>
+</body>
+</html>

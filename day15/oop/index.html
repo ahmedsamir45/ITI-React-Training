@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shapes with ES6 and Colors</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="shapesCanvas" width="500" height="500"></canvas>
+
+  <script>
+    // Base class
+    class Polygon {
+      constructor() {
+        if (this.constructor === Polygon) {
+          throw new Error("Cannot instantiate abstract class Polygon");
+        }
+      }
+
+      area() {
+        throw new Error("Method 'area()' must be implemented.");
+      }
+
+      toString() {
+        return `Area: ${this.area()}`;
+      }
+
+      draw(ctx) {
+        throw new Error("Method 'draw()' must be implemented.");
+      }
+    }
+
+    // Rectangle class
+    class Rectangle extends Polygon {
+      constructor(width, height) {
+        super();
+        this.width = width;
+        this.height = height;
+      }
+
+      area() {
+        return this.width * this.height;
+      }
+
+      toString() {
+        return `Rectangle [width=${this.width}, height=${this.height}, area=${this.area()}]`;
+      }
+
+      draw(ctx, x, y, color) {
+        ctx.beginPath();
+        ctx.fillStyle = color;  
+        ctx.rect(x, y, this.width, this.height);
+        ctx.fill();  
+        ctx.stroke();
+      }
+    }
+
+    
+    class Square extends Rectangle {
+      constructor(side) {
+        super(side, side);
+      }
+
+      toString() {
+        return `Square [side=${this.width}, area=${this.area()}]`;
+      }
+    }
+
+
+    class Circle extends Polygon {
+      constructor(radius) {
+        super();
+        this.radius = radius;
+      }
+
+      area() {
+        return Math.PI * Math.pow(this.radius, 2);
+      }
+
+      toString() {
+        return `Circle [radius=${this.radius}, area=${this.area().toFixed(2)}]`;
+      }
+
+      draw(ctx, x, y, color) {
+        ctx.beginPath();
+        ctx.fillStyle = color;  
+        ctx.arc(x, y, this.radius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+      }
+    }
+
+    
+    class Triangle extends Polygon {
+      constructor(base, height) {
+        super();
+        this.base = base;
+        this.height = height;
+      }
+
+      area() {
+        return (this.base * this.height) / 2;
+      }
+
+      toString() {
+        return `Triangle [base=${this.base}, height=${this.height}, area=${this.area()}]`;
+      }
+
+      draw(ctx, x, y, color) {
+        ctx.beginPath();
+        ctx.fillStyle = color; 
+        ctx.moveTo(x, y); 
+        ctx.lineTo(x + this.base, y);
+        ctx.lineTo(x + this.base / 2, y - this.height); 
+        ctx.closePath();
+        ctx.fill();  
+        ctx.stroke();
+      }
+    }
+
+ 
+    const canvas = document.getElementById('shapesCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const shapes = [
+      new Rectangle(100, 50),
+      new Square(60),
+      new Circle(50),
+      new Triangle(100, 80)
+    ];
+
+    shapes[0].draw(ctx, 50, 50, 'red');        
+    shapes[1].draw(ctx, 200, 50, 'blue');      
+    shapes[2].draw(ctx, 100, 200, 'green');    
+    shapes[3].draw(ctx, 250, 300, 'orange');   
+
+   
+    shapes.forEach((shape) => {
+      console.log(shape.toString());
+    });
+
+  </script>
+</body>
+</html>

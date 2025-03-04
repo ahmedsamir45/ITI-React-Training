@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symmetrical Letter A</title>
+    <style>
+        canvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <canvas id="mycanvas" width="400px" height="400px"></canvas>
+    </div>
+    <script>
+        var context = document.getElementById("mycanvas").getContext("2d");
+
+        
+        context.beginPath();
+        var grd = context.createRadialGradient(300,100, 100, 100, 100, 400);
+        grd.addColorStop(0, '#0b57d0');
+        grd.addColorStop(0.5, 'white');
+        grd.addColorStop(1, '#0b57d0');
+        context.arc(200, 200, 100, 0, 2 * Math.PI);
+        context.fillStyle = grd;
+        context.fill();
+        context.closePath();
+
+        
+        context.beginPath();
+        var grd2 = context.createRadialGradient(200, 200, 0, 200, 200, 70);
+        grd2.addColorStop(0, 'white');
+        grd2.addColorStop(1, '#0b57d0');
+        grd2.addColorStop(0.5, '#7cacf8');
+        context.arc(200, 200, 70, 0, 2 * Math.PI);
+        context.fillStyle = grd2;
+        context.fill();
+        context.closePath();
+
+        context.font = "100pt Arial"; 
+        context.textAlign = "center";
+        context.textBaseline = "middle";
+        context.fillStyle = "white";  
+        context.fillText("A", 200, 200); 
+    </script>
+</body>
+</html>

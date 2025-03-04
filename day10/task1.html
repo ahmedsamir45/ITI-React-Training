@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Example</title>
+    <style>
+        canvas {
+            display: block;
+            width: fit-content;
+            margin: 30px auto;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="400px" height="400px"></canvas>
+
+    <script>
+        const ctx = document.getElementById('myCanvas').getContext('2d');
+
+        // Sky gradient
+        const skyGradient = ctx.createLinearGradient(0, 0, 0, 200);
+        skyGradient.addColorStop(0, '#00BFFF');
+        skyGradient.addColorStop(1, '#FFFFFF');
+        ctx.fillStyle = skyGradient;
+        ctx.fillRect(0, 0, 400, 200);
+
+        // Grass gradient
+        const grassGradient = ctx.createLinearGradient(0, 200, 0, 400);
+        grassGradient.addColorStop(0, '#7CFC00');
+        grassGradient.addColorStop(1, '#FFFFFF');
+        ctx.fillStyle = grassGradient;
+        ctx.fillRect(0, 200, 400, 200);
+
+        // Gradient for vertical lines
+        const lineGradient = ctx.createLinearGradient(150, 150, 150, 250);
+        lineGradient.addColorStop(0, '#000000');
+        lineGradient.addColorStop(1, 'rgba(0, 0, 0, 0)'); 
+
+        ctx.strokeStyle = lineGradient;
+        ctx.lineWidth = 2;
+
+        ctx.beginPath();
+        ctx.moveTo(150, 250);             
+        ctx.lineTo(150, 150);             
+        ctx.moveTo(250, 150);            
+        ctx.lineTo(250, 250);            
+        ctx.stroke();
+
+        // Horizontal line 
+        ctx.strokeStyle = '#000000';
+        ctx.beginPath();
+        ctx.moveTo(150, 150);             
+        ctx.lineTo(250, 150);
+        ctx.stroke();
+
+    </script>
+</body>
+</html>

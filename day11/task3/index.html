@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>send email</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="message-card">
+           
+            <div class="title">
+                <h1>Login</h1>
+            </div>
+            <form onsubmit="sendEmail(); reset(); return false">
+                <div class="myin">
+                    <input type="text" name="" id="name" placeholder="your name" pattern=".{5,}" title="Name must be at least 5 characters long" required>
+
+
+                <span>Name must be at least 5 characters long</span>
+                </div>
+        <div class="myin">
+                <input type="email" name="" id="email" placeholder="email id" required>
+                <span>this is not valid email please enter the right email</span>
+        </div>
+
+                <button id="submit" type="submit">send</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

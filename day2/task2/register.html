@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <style>
+        h1{
+            text-decoration: underline;
+            width: fit-content;
+            padding: 10px;
+            margin: 10px auto;
+        }
+        table{
+            width: fit-content;
+            display: block;
+            margin: 10px auto;
+            border: 2px solid #cecece;
+        }
+        body{
+            background-color: azure;
+        }
+    td{
+        border: 1px solid #cecece;
+        background-color: azure;
+
+    }
+    textarea,input[type="text"],[type="password"],[type="email"],[type="date"],select{
+        width: 100%;
+
+    }
+    textarea{
+        height: 100px;
+    }
+    td,th,tr{
+        padding: 10px;
+    }
+    .btn{
+        width: fit-content;
+    
+        padding: 10px;
+        margin: auto;
+    }
+    tr > td{
+        color: brown;
+      
+    }
+    td.bio{
+        text-align: center;
+    }
+    div{
+        margin: 10px;
+
+    }
+    div span{
+        width: 130px;
+        display: inline-block;
+    }
+  
+
+ .btn{
+        margin: 10px;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registration Form</h1>
+        <form action="login.html">
+            <table>
+                <tr>
+                    <td>First Name</td>
+                    <td colspan="2"><input type="text" name="fname" id="fname" placeholder="Enter your first name"></td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td colspan="2"><input type="text" name="lname" id="lname" placeholder="Enter your last name"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td colspan="2"><input type="email" name="email" id="email" placeholder="Enter your email"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td colspan="2"><input type="password" name="password" id="password" placeholder="Enter your password"></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">Gender</td>
+                    <td colspan="2"><input type="radio" name="gender" id="female" value="female"><label for="female">Female</label></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="radio" name="gender" id="male" value="male"><label for="male">Male</label></td>
+                </tr>
+                <tr>
+                    <td>Country</td>
+                    <td colspan="2">
+                        <select name="country" id="country">
+                            <option disabled>Select your country</option>
+                            <optgroup label="Africa">
+                                <option value="egypt">Egypt</option>
+                                <option value="sudan">Sudan</option>
+                                <option value="libya">Libya</option>
+                                <option value="tunisia">Tunisia</option>
+                                <option value="morocco">Morocco</option>
+                            </optgroup>
+                            <optgroup label="Europe" disabled>
+                                <option value="italy">Italy</option>
+                                <option value="sweden">Sweden</option>
+                                <option value="spain">Spain</option>
+                            </optgroup>
+                            <optgroup label="Asia">
+                                <option value="palestine">Palestine</option>
+                                <option value="southkorea">South Korea</option>
+                                <option value="india">India</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Birthday</td>
+                    <td colspan="2"><input type="date" name="date" id="date"></td>
+                </tr>
+                <tr>
+                    <td colspan="3">Interests</td>
+              
+                </tr>
+                <tr>
+    
+                    <td colspan="3">
+                        <div>
+                           <span> <input type="checkbox" name="interests" id="sports" value="sports"><label for="sports">Sports</label></span>
+                        <span> <input type="checkbox" name="interests" id="music" value="music"><label for="music">Music</label></span>
+                    <span><input type="checkbox" name="interests" id="fashion" value="fashion"><label for="fashion">Fashion</label></span>
+                        </div>
+                        <div>
+                        <span><input type="checkbox" name="interests" id="reading" value="reading"><label for="reading">Reading</label></span>
+                    <span><input type="checkbox" name="interests" id="shopping" value="shopping"><label for="shopping">Shopping</label></span>
+                <span><input type="checkbox" name="interests" id="movies" value="movies"><label for="movies">Movies</label></span>
+                    </div>
+                    </td>
+                </tr>
+                <tr >
+                    <td colspan="3" class="bio">Bio</td>
+                
+                </tr>
+                <tr>
+         
+                    <td colspan="3"><textarea name="bio" id="bio"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center">
+                        <input type="submit" class="btn" value="Register">
+                        <input type="reset" class="btn" value="Clear">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    
+</body>
+</html>
